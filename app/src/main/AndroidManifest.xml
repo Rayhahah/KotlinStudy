@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".RequestActivity">
         </activity>
+        <activity android:name=".learn.basicType.BasicTypeActivity">
+        </activity>
     </application>
 
 </manifest>

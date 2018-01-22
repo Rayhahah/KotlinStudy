@@ -21,4 +21,11 @@
        android:layout_height="wrap_content"/>
 
 
+   <Button
+       android:id="@+id/btn_to_basic_type"
+       android:text="to_BasicTypeActivity"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+
+
 </LinearLayout>
