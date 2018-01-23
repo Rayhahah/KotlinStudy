@@ -34,6 +34,9 @@ class Person(name: String, age: Int) {
     var str = ""
     val STR = "HELLO"
 
+    //lateinit表示后面自己再来初始化，并且必须指定类型
+    lateinit var hobby:String;
+
     /**
      * 初始化执行参数
      */
@@ -46,7 +49,9 @@ class Person(name: String, age: Int) {
         set(value) {
             field = value + "_sex"
         }
-        get() = field.toLowerCase()
+        get() {
+            return field.toLowerCase()
+        }
 
 
 }

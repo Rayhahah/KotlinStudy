@@ -1,6 +1,6 @@
-package com.rayhahah.kotlinstudy
+package com.rayhahah.kotlinstudy.learn.basicType
 
-import android.util.Log
+import com.rayhahah.kotlinstudy.l
 
 /**
  * ┌───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┐
@@ -20,35 +20,36 @@ import android.util.Log
  *
  * @author Rayhahah
  * @blog http://rayhahah.com
- * @time 2018/1/20
+ * @time 2018/1/23
  * @tips 这个类是Object的子类
  * @fuction
  */
 
-fun l(msg: Any?) {
-    Log.e("lzh", msg.toString())
+fun testOperator() {
+    val op = "+"
+    val left = 5.0
+    val right = 3.0
+    l("$left $op $right = ${Operator(op).appylyCal(left, right)}")
 }
 
-fun thread(target: () -> Unit) {
-    Thread(target).start()
-}
 
-/**
- * 这个传入匿名参数就等于，传入的函数必须符合
- * fun(it:IntArray){
- * return Int
- * }
- *
- */
-fun hello(t: (IntArray) -> Int) {
+class Operator(op: String) {
+    val opFun: (left: Double, right: Double) -> Double
 
-}
+    init {
+        opFun = when (op) {
+            "+" -> { l, r -> l + r }
+            "-" -> { l, r -> l - r }
+            "*" -> { l, r -> l * r }
+            "/" -> { l, r -> l / r }
+            "%" -> { l, r -> l % r }
+            else -> {
+                throw UnsupportedOperationException()
+            }
+        }
+    }
 
-/**
- * reduce表示循环减少的个位
- */
-fun IntArray.forEach(reduce: Int, action: (Int) -> Unit) {
-    for (element in 0..(this.size - reduce)) {
-        action(element)
+    fun appylyCal(left: Double, right: Double): Double {
+        return opFun.invoke(left, right)
     }
 }

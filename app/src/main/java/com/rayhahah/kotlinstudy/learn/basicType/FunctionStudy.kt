@@ -1,6 +1,6 @@
-package com.rayhahah.kotlinstudy
+package com.rayhahah.kotlinstudy.learn.basicType
 
-import android.util.Log
+import com.rayhahah.kotlinstudy.l
 
 /**
  * ┌───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┐
@@ -20,35 +20,51 @@ import android.util.Log
  *
  * @author Rayhahah
  * @blog http://rayhahah.com
- * @time 2018/1/20
+ * @time 2018/1/22
  * @tips 这个类是Object的子类
  * @fuction
  */
+class FunctionStudy {
+    /**
+     * 下面几种方式效果是一致的
+     */
+    fun add(a: Int, b: Int): Int {
+        return a + b
+    }
 
-fun l(msg: Any?) {
-    Log.e("lzh", msg.toString())
-}
+    fun addEasy(a: Int, b: Int) = a + b
 
-fun thread(target: () -> Unit) {
-    Thread(target).start()
-}
+    /**
+     * Lambda表达式的最后一行就是他的返回值
+     */
+    val addLamda = { a: Int, b: Int ->
+        l("a=$a,b=$b")
+        a + b
+    }
 
-/**
- * 这个传入匿名参数就等于，传入的函数必须符合
- * fun(it:IntArray){
- * return Int
- * }
- *
- */
-fun hello(t: (IntArray) -> Int) {
+    val printLambda = { println("hello") }
 
-}
+    /**
+     *将函数赋值给变量
+     * 类似于函数指针，在JS中的使用
+     */
+    val long = fun(i: Int): Long = i.toLong()
 
-/**
- * reduce表示循环减少的个位
- */
-fun IntArray.forEach(reduce: Int, action: (Int) -> Unit) {
-    for (element in 0..(this.size - reduce)) {
-        action(element)
+    fun testLotsArgs() {
+        /**
+         * 使用具名参数
+         */
+        lotsArgs(1, 2, 3, str = "nihao")
+    }
+
+    /**
+     *
+     * 变长参数咯
+     * 需要配合具名参数来使用
+     */
+    fun lotsArgs(vararg a: Int, str: String) {
+        a.forEach {
+            l("$str,$a")
+        }
     }
 }

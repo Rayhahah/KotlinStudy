@@ -1,6 +1,4 @@
-package com.rayhahah.kotlinstudy
-
-import android.util.Log
+package com.rayhahah.kotlinstudy.learn.basicType
 
 /**
  * ┌───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┐
@@ -20,35 +18,29 @@ import android.util.Log
  *
  * @author Rayhahah
  * @blog http://rayhahah.com
- * @time 2018/1/20
+ * @time 2018/1/22
  * @tips 这个类是Object的子类
  * @fuction
  */
 
-fun l(msg: Any?) {
-    Log.e("lzh", msg.toString())
-}
+class Complex(var real: Double, var imaginary: Double) {
+    operator fun plus(other: Complex): Complex {
+        return Complex(real + other.real, imaginary + other.imaginary)
+    }
 
-fun thread(target: () -> Unit) {
-    Thread(target).start()
-}
+    operator fun plus(other: Int): Complex {
+        return Complex(real + other, imaginary)
+    }
 
-/**
- * 这个传入匿名参数就等于，传入的函数必须符合
- * fun(it:IntArray){
- * return Int
- * }
- *
- */
-fun hello(t: (IntArray) -> Int) {
+    operator fun plus(other: Any): Int {
+        return real.toInt()
+    }
 
-}
+    operator fun invoke(): Double {
+        return Math.hypot(real, imaginary)
+    }
 
-/**
- * reduce表示循环减少的个位
- */
-fun IntArray.forEach(reduce: Int, action: (Int) -> Unit) {
-    for (element in 0..(this.size - reduce)) {
-        action(element)
+    override fun toString(): String {
+        return "$real + ${imaginary}i"
     }
 }
