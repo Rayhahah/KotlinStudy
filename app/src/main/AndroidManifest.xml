@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".learn.basicType.BasicTypeActivity">
         </activity>
+        <activity android:name=".learn.OOP.OOPActivity">
+        </activity>
     </application>
 
 </manifest>

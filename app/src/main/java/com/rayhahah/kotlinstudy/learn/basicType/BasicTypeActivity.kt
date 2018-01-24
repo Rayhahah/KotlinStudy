@@ -71,6 +71,10 @@ class BasicTypeActivity : AppCompatActivity() {
 
         }
 
+        for (i in 0 until arrayOfInt.size) {
+
+        }
+
         /**
          * Iterable的对象都可以使用这种方式来循环
          */

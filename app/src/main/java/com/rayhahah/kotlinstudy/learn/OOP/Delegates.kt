@@ -1,4 +1,4 @@
-package net.println.kotlin.chapter4.delegates
+package com.rayhahah.kotlinstudy.learn.OOP
 
 import kotlin.reflect.KProperty
 

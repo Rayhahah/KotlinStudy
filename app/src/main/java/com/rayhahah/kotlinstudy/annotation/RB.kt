@@ -1,4 +1,4 @@
-package com.rayhahah.kotlinstudy.learn.basicType
+package com.rayhahah.kotlinstudy.annotation
 
 /**
  * ┌───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┐
@@ -18,32 +18,9 @@ package com.rayhahah.kotlinstudy.learn.basicType
  *
  * @author Rayhahah
  * @blog http://rayhahah.com
- * @time 2018/1/22
+ * @time 2018/1/23
  * @tips 这个类是Object的子类
  * @fuction
  */
 
-/**
- * 对运算符的重载
- */
-class Complex(var real: Double, var imaginary: Double) {
-    operator fun plus(other: Complex): Complex {
-        return Complex(real + other.real, imaginary + other.imaginary)
-    }
-
-    operator fun plus(other: Int): Complex {
-        return Complex(real + other, imaginary)
-    }
-
-    operator fun plus(other: Any): Int {
-        return real.toInt()
-    }
-
-    operator fun invoke(): Double {
-        return Math.hypot(real, imaginary)
-    }
-
-    override fun toString(): String {
-        return "$real + ${imaginary}i"
-    }
-}
+annotation class RB

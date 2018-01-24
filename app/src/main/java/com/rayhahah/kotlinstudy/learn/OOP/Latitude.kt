@@ -1,15 +1,9 @@
-package net.println.kotlin.chapter4
+package com.rayhahah.kotlinstudy.learn.OOP
 
 /**
- * Created by benny on 4/4/17.
+ * 伴生对象
+ * 也就相对应Java的静态方法和成员
  */
-fun main(args: Array<String>) {
-    val latitude = Latitude.ofDouble(3.0)
-    val latitude2 = Latitude.ofLatitude(latitude)
-
-    println(Latitude.TAG)
-}
-
 class Latitude private constructor(val value: Double){
     companion object{
         @JvmStatic

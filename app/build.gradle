@@ -3,6 +3,19 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-noarg'
+apply plugin: 'kotlin-allopen'
+
+noArg {
+    annotation("com.rayhahah.kotlinstudy.annotation.RB")
+}
+
+allOpen {
+    annotation("com.rayhahah.kotlinstudy.annotation.RB")
+}
+
+
+
 
 android {
     compileSdkVersion 26

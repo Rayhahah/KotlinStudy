@@ -52,3 +52,14 @@ fun IntArray.forEach(reduce: Int, action: (Int) -> Unit) {
         action(element)
     }
 }
+
+/**
+ * 拓展属性
+ */
+var String.a: String
+    get() {
+        return "hello"
+    }
+    set(value) {
+    }
+
