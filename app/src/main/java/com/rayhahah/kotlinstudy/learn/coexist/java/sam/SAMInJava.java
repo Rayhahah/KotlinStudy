@@ -1,4 +1,4 @@
-package com.rayhahah.kotlinstudy.demo.chapter8.java.sam;
+package com.rayhahah.kotlinstudy.learn.coexist.java.sam;
 
 import java.util.ArrayList;
 

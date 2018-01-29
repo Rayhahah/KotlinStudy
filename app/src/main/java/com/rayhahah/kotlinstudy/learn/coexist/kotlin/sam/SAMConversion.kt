@@ -1,7 +1,7 @@
 package cn.kotliner.kotlin.sam
 
-import cn.kotliner.java.sam.SAMInJava
-import java.util.concurrent.Executors
+import com.rayhahah.kotlinstudy.learn.coexist.java.sam.SAMInJava
+
 
 fun main(args: Array<String>) {
     val samInJava = SAMInJava()
